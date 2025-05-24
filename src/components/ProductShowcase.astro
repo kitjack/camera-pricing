@@ -1,0 +1,135 @@
+---
+interface Product {
+  id: string;
+  name: string;
+  subtitle: string;
+  image: string;
+  url: string;
+}
+
+const products: Product[] = [
+  {
+    id: "creator-edition",
+    name: "HERO13 Black Creator Edition",
+    subtitle: "",
+    image: "https://static.gopro.com/assets/blta2b8522e5372af40/blt5aa3447fc0160367/66c85167ea00465eb6446314/01-hp-module-ce-new-1920-768.png",
+    url: "#"
+  },
+  {
+    id: "ultra-wide",
+    name: "HERO13 Black Ultra Wide Edition",
+    subtitle: "",
+    image: "https://static.gopro.com/assets/blta2b8522e5372af40/blt3fffa257f4a4b0fe/681b9a536c26f41477e6169d/02-hp-module-h13-ultrawide-new-1920-768.png",
+    url: "#"
+  }
+];
+---
+
+<section class="product-showcase">
+  <div class="container">
+    <div class="product-cards">
+      {products.map(product => (
+        <div class="product-card">
+          <div class="product-content">
+            <h3 class="product-name">{product.name}</h3>
+            {product.subtitle && <p class="product-subtitle">{product.subtitle}</p>}
+            <a href={product.url} class="btn btn-outline">SHOP NOW</a>
+          </div>
+          <div class="product-image">
+            <img src={product.image} alt={product.name} loading="lazy" />
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .product-showcase {
+    padding: 60px 0;
+    background-color: #f8f8f8;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  .product-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .product-card {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 30px;
+    z-index: 2;
+  }
+
+  .product-name {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: black;
+  }
+
+  .product-subtitle {
+    font-size: 16px;
+    margin-bottom: 20px;
+    opacity: 0.8;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-family: 'SohneHalbfett', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+  }
+
+  .btn-outline {
+    background-color: black;
+    color: white;
+    border: none;
+  }
+
+  .btn:hover {
+    opacity: 0.85;
+  }
+
+  .product-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .product-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

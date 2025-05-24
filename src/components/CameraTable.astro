@@ -1,0 +1,243 @@
+---
+interface Camera {
+  id: string;
+  brand: string;
+  model: string;
+  type: string;
+  resolution: string;
+  sensor: string;
+  price: string;
+  url: string;
+}
+
+const cameras: Camera[] = [
+  {
+    id: "1",
+    brand: "Canon",
+    model: "EOS R5",
+    type: "Mirrorless",
+    resolution: "45MP",
+    sensor: "Full Frame",
+    price: "$3,899",
+    url: "#"
+  },
+  {
+    id: "2",
+    brand: "Sony",
+    model: "Alpha a7 IV",
+    type: "Mirrorless",
+    resolution: "33MP",
+    sensor: "Full Frame",
+    price: "$2,499",
+    url: "#"
+  },
+  {
+    id: "3",
+    brand: "Nikon",
+    model: "Z8",
+    type: "Mirrorless",
+    resolution: "45.7MP",
+    sensor: "Full Frame",
+    price: "$3,999",
+    url: "#"
+  },
+  {
+    id: "4",
+    brand: "Fujifilm",
+    model: "X-T5",
+    type: "Mirrorless",
+    resolution: "40MP",
+    sensor: "APS-C",
+    price: "$1,699",
+    url: "#"
+  },
+  {
+    id: "5",
+    brand: "Panasonic",
+    model: "Lumix S5 II",
+    type: "Mirrorless",
+    resolution: "24.2MP",
+    sensor: "Full Frame",
+    price: "$1,999",
+    url: "#"
+  },
+  {
+    id: "6",
+    brand: "OM System",
+    model: "OM-1",
+    type: "Mirrorless",
+    resolution: "20.4MP",
+    sensor: "Micro Four Thirds",
+    price: "$2,199",
+    url: "#"
+  }
+];
+---
+
+<section class="camera-table-section">
+  <div class="container">
+    <h2 class="section-title">Popular Camera Comparison</h2>
+    <p class="section-subtitle">Find the right camera for your needs by comparing specifications and prices</p>
+
+    <div class="table-responsive">
+      <table class="camera-table">
+        <thead>
+          <tr>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Type</th>
+            <th>Resolution</th>
+            <th>Sensor</th>
+            <th>Price</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {cameras.map(camera => (
+            <tr>
+              <td>{camera.brand}</td>
+              <td>{camera.model}</td>
+              <td>{camera.type}</td>
+              <td>{camera.resolution}</td>
+              <td>{camera.sensor}</td>
+              <td>{camera.price}</td>
+              <td>
+                <a href={camera.url} class="view-btn">View Details</a>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-actions">
+      <a href="#" class="btn btn-primary">Compare More Cameras</a>
+      <a href="#" class="btn btn-outline">Find Best Deals</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .camera-table-section {
+    padding: 60px 0;
+    background-color: #f8f8f8;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  .section-title {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: 'SohneHalbfett', sans-serif;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 40px;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin-bottom: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  .camera-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .camera-table th,
+  .camera-table td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+
+  .camera-table th {
+    background-color: #f5f5f5;
+    font-family: 'SohneHalbfett', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  .camera-table tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+
+  .camera-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .view-btn {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #e0e0e0;
+    color: #333;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    text-align: center;
+  }
+
+  .view-btn:hover {
+    background-color: #d0d0d0;
+  }
+
+  .table-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 14px 24px;
+    font-family: 'SohneHalbfett', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+
+  .btn-primary {
+    background-color: #262c2b;
+    color: white;
+  }
+
+  .btn-outline {
+    background-color: transparent;
+    color: #262c2b;
+    border: 1px solid #262c2b;
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  @media (max-width: 768px) {
+    .table-actions {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .section-title {
+      font-size: 28px;
+    }
+
+    .section-subtitle {
+      font-size: 16px;
+    }
+  }
+</style>

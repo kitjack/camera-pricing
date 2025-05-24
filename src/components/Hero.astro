@@ -1,0 +1,215 @@
+<section class="hero">
+  <div class="hero-header">
+    <h1>Find Your Perfect Camera</h1>
+    <p>Discover the best cameras for your needs with detailed comparisons and expert reviews</p>
+
+    <div class="hero-buttons">
+      <a href="#compare" class="btn-primary">Compare Cameras</a>
+      <a href="#deals" class="btn-secondary">Find Deals</a>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <img src="/images/hero_image.png" alt="Camera Equipment" />
+  </div>
+
+  <div class="browse-section">
+    <h2>Browse by Camera Type</h2>
+    <div class="camera-types-grid">
+      <button class="camera-type-btn">MIRRORLESS</button>
+      <button class="camera-type-btn">DSLR</button>
+      <button class="camera-type-btn">POINT & SHOOT</button>
+      <button class="camera-type-btn">MEDIUM FORMAT</button>
+      <button class="camera-type-btn">ACTION CAMERA</button>
+      <button class="camera-type-btn">DRONE CAMERA</button>
+      <button class="camera-type-btn">360° CAMERA</button>
+      <button class="camera-type-btn">FILM CAMERA</button>
+      <button class="camera-type-btn">INSTANT CAMERA</button>
+      <button class="camera-type-btn">VIDEO CAMERA</button>
+      <button class="camera-type-btn">CINEMA CAMERA</button>
+      <button class="camera-type-btn">UNDERWATER</button>
+      <button class="camera-type-btn">WEBCAM</button>
+      <button class="camera-type-btn">SECURITY CAMERA</button>
+      <button class="camera-type-btn">SPECIALTY CAMERA</button>
+      <button class="camera-type-btn">SMARTPHONE CAMERA</button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    background-color: #f8f8f8;
+    width: 100%;
+  }
+
+  .hero-header {
+    background-color: white;
+    padding: 80px 20px 60px;
+    text-align: center;
+  }
+
+  h1 {
+    font-family: 'SohneBreitExtrafett', sans-serif;
+    font-size: 48px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #262c2b;
+    text-align: center;
+  }
+
+  .hero-header p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #555;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    display: inline-block;
+    padding: 14px 28px;
+    font-family: 'SohneHalbfett', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .btn-primary {
+    background-color: #262c2b;
+    color: white;
+    border: none;
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: #262c2b;
+    border: 1px solid #262c2b;
+  }
+
+  .btn-primary:hover,
+  .btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .hero-image {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .browse-section {
+    background-color: white;
+    padding: 60px 20px;
+  }
+
+  .browse-section h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'SohneHalbfett', sans-serif;
+    color: #262c2b;
+  }
+
+  .camera-types-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .camera-type-btn {
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 8px;
+    padding: 16px 12px;
+    font-size: 14px;
+    font-family: 'SohneHalbfett', sans-serif;
+    color: #262c2b;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+  }
+
+  .camera-type-btn:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+  }
+
+
+
+  @media (max-width: 980px) {
+    .hero-header {
+      padding: 60px 20px 40px;
+    }
+    h1 {
+      font-size: 36px;
+    }
+    .hero-image img {
+      height: 400px;
+    }
+    .camera-types-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .browse-section {
+      padding: 40px 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .camera-types-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .hero-image img {
+      height: 360px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+    h1 {
+      font-size: 24px;
+    }
+    .hero-header {
+      padding: 40px 20px 30px;
+    }
+    .camera-types-grid {
+      grid-template-columns: 1fr;
+    }
+    .camera-type-btn {
+      padding: 12px 8px;
+      font-size: 12px;
+    }
+    .hero-image img {
+      height: 320px;
+    }
+    .browse-section {
+      padding: 30px 20px;
+    }
+  }
+</style>

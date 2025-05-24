@@ -1,0 +1,286 @@
+---
+interface Brand {
+  name: string;
+  logo: string;
+  description: string;
+  url: string;
+}
+
+const brands: Brand[] = [
+  {
+    name: 'Canon',
+    logo: '/images/brands/canon.jpeg',
+    description: 'Find Canon camera pricing, specifications and latest models from the leading camera manufacturer.',
+    url: '/canon-camera-pricing'
+  },
+  {
+    name: 'Nikon',
+    logo: '/images/brands/nikon.webp',
+    description: 'Discover Nikon camera pricing, specifications and professional photography solutions.',
+    url: '/nikon-camera-pricing'
+  },
+  {
+    name: 'Sony',
+    logo: '/images/brands/sony.jpeg',
+    description: 'Compare Sony camera pricing, specifications and innovative mirrorless technology.',
+    url: '/sony-camera-pricing'
+  },
+  {
+    name: 'Fujifilm',
+    logo: '/images/brands/fujifilm.jpeg',
+    description: 'Explore Fujifilm camera pricing, specifications and film simulation technology.',
+    url: '/fujifilm-camera-pricing'
+  },
+  {
+    name: 'Panasonic Lumix',
+    logo: '/images/brands/lumix.png',
+    description: 'Check Panasonic Lumix camera pricing, specifications and video-focused features.',
+    url: '/lumix-camera-pricing'
+  },
+  {
+    name: 'OM System',
+    logo: '/images/brands/om-system.png',
+    description: 'Find OM System camera pricing, specifications and micro four thirds systems.',
+    url: '/om-system-camera-pricing'
+  },
+  {
+    name: 'Leica',
+    logo: '/images/brands/leica.jpeg',
+    description: 'Discover Leica camera pricing, specifications and premium German engineering.',
+    url: '/leica-camera-pricing'
+  },
+  {
+    name: 'Hasselblad',
+    logo: '/images/brands/hasselblad.jpg',
+    description: 'Compare Hasselblad camera pricing, specifications and medium format excellence.',
+    url: '/hasselblad-camera-pricing'
+  },
+  {
+    name: 'Pentax',
+    logo: '/images/brands/pentax.png',
+    description: 'Explore Pentax camera pricing, specifications and weather-resistant DSLR systems.',
+    url: '/pentax-camera-pricing'
+  },
+  {
+    name: 'Sigma',
+    logo: '/images/brands/sigma.png',
+    description: 'Check Sigma camera pricing, specifications and high-quality lens systems.',
+    url: '/sigma-camera-pricing'
+  },
+  {
+    name: 'GoPro',
+    logo: '/images/brands/gopro.png',
+    description: 'Find GoPro camera pricing, specifications and action camera technology.',
+    url: '/gopro-camera-pricing'
+  },
+  {
+    name: 'DJI',
+    logo: '/images/brands/dji.jpeg',
+    description: 'Compare DJI camera pricing, specifications and drone camera innovations.',
+    url: '/dji-camera-pricing'
+  },
+  {
+    name: 'Polaroid',
+    logo: '/images/brands/polaroid.webp',
+    description: 'Discover Polaroid camera pricing, specifications and instant photography solutions.',
+    url: '/polaroid-camera-pricing'
+  },
+  {
+    name: 'Kodak',
+    logo: '/images/brands/kodak.png',
+    description: 'Explore Kodak camera pricing, specifications and digital photography heritage.',
+    url: '/kodak-camera-pricing'
+  },
+  {
+    name: 'Blackmagic Design',
+    logo: '/images/brands/blackmagic.png',
+    description: 'Check Blackmagic camera pricing, specifications and professional cinema cameras.',
+    url: '/blackmagic-camera-pricing'
+  },
+  {
+    name: 'Insta360',
+    logo: '/images/brands/insta360.png',
+    description: 'Find Insta360 camera pricing, specifications and 360-degree camera technology.',
+    url: '/insta360-camera-pricing'
+  }
+];
+---
+
+<section class="brand-grid">
+  <div class="container">
+    <h2 class="section-title">Check Camera Pricing by Brand</h2>
+    <p class="section-subtitle">Compare prices, specifications, and features from top camera manufacturers worldwide</p>
+
+    <div class="grid">
+      {brands.map((brand) => (
+        <div class="brand-card">
+          <div class="brand-logo">
+            <img src={brand.logo} alt={brand.name + ' logo'} />
+          </div>
+          <div class="brand-content">
+            <h3 class="brand-name">{brand.name}</h3>
+            <p class="brand-description">{brand.description}</p>
+            <a href={brand.url} class="brand-link">Check Camera Pricing →</a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .brand-grid {
+    padding: 80px 0;
+    background-color: white;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  .section-title {
+    font-size: 36px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: 'SohneHalbfett', sans-serif;
+    color: #262c2b;
+  }
+
+  .section-subtitle {
+    font-size: 18px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+  }
+
+  .brand-card {
+    background-color: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+  }
+
+  .brand-card:hover {
+    transform: translateY(-4px);
+    border-color: #d1d5db;
+  }
+
+  .brand-logo {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    background-color: #f8fafc;
+    border-radius: 0;
+    padding: 12px;
+    flex-shrink: 0;
+  }
+
+  .brand-logo img {
+    max-height: 76px;
+    max-width: 76px;
+    object-fit: contain;
+  }
+
+  .brand-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .brand-name {
+    font-size: 20px;
+    margin-bottom: 8px;
+    font-family: 'SohneHalbfett', sans-serif;
+    color: #1f2937;
+    line-height: 1.2;
+  }
+
+  .brand-description {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #6b7280;
+    margin-bottom: 20px;
+    flex: 1;
+  }
+
+  .brand-link {
+    color: #3b82f6;
+    font-family: 'SohneHalbfett', sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.2s ease;
+    margin-top: auto;
+    align-self: flex-start;
+  }
+
+  .brand-link:hover {
+    color: #2563eb;
+  }
+
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .section-title {
+      font-size: 28px;
+    }
+
+    .section-subtitle {
+      font-size: 16px;
+    }
+
+    .brand-card {
+      padding: 16px;
+    }
+
+    .brand-logo {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 12px;
+      padding: 10px;
+      border-radius: 0;
+    }
+
+    .brand-logo img {
+      max-height: 60px;
+      max-width: 60px;
+    }
+
+    .brand-name {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+
+    .section-title {
+      font-size: 24px;
+    }
+  }
+</style>

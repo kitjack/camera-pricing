@@ -1,0 +1,158 @@
+---
+interface SocialPost {
+  id: string;
+  image: string;
+  profilePic: string;
+  username: string;
+  link: string;
+  time: string;
+}
+
+const socialPosts: SocialPost[] = [
+  {
+    id: "1",
+    image: "https://ext.same-assets.com/2907848990/3304344071.jpeg",
+    profilePic: "https://ext.same-assets.com/2907848990/455391743.jpeg",
+    username: "gopro",
+    link: "https://www.instagram.com/p/DJ7Wqc3JiAA/",
+    time: "17 hr. ago"
+  },
+  {
+    id: "2",
+    image: "https://ext.same-assets.com/2907848990/640364624.jpeg",
+    profilePic: "https://ext.same-assets.com/2907848990/455391743.jpeg",
+    username: "gopro",
+    link: "https://www.instagram.com/reel/DJ7DJjbJyWh/",
+    time: "1 day ago"
+  }
+];
+---
+
+<section class="social">
+  <div class="container">
+    <h2 class="section-title">Captured on #GoPro</h2>
+    <p class="section-subtitle">See how the GoPro community captures their fun all around the world.</p>
+
+    <div class="social-grid">
+      {socialPosts.map(post => (
+        <div class="social-card">
+          <a href={post.link} target="_blank" rel="noopener">
+            <div class="social-image">
+              <img src={post.image} alt="GoPro social post" loading="lazy" />
+            </div>
+            <div class="social-info">
+              <div class="profile">
+                <img src={post.profilePic} alt={post.username} class="profile-pic" />
+                <span class="username">{post.username}</span>
+              </div>
+              <div class="post-meta">
+                <span class="time">{post.time}</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .social {
+    padding: 80px 0;
+    background-color: #fff;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  .section-title {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 16px;
+    color: #666;
+  }
+
+  .social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .social-card {
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+  }
+
+  .social-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .social-image {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+  }
+
+  .social-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .social-info {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+  }
+
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .profile-pic {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+
+  .username {
+    font-size: 14px;
+    font-family: 'SohneHalbfett', sans-serif;
+  }
+
+  .post-meta {
+    font-size: 12px;
+    color: #999;
+  }
+
+  @media (max-width: 768px) {
+    .social-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .social-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

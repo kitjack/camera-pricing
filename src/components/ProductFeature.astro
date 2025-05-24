@@ -1,0 +1,134 @@
+---
+---
+
+<section class="product-feature">
+  <div class="container">
+    <div class="feature-grid">
+      <div class="feature-item feature-main">
+        <a href="#">
+          <div class="feature-content">
+            <h3>Accessories to help you GoPro.</h3>
+          </div>
+          <div class="feature-image">
+            <img src="https://static.gopro.com/assets/blta2b8522e5372af40/blt0a978bd53b04e0bc/66ced02962373bca3d723e8d/03-accessory-module-1280-v2.png" alt="GoPro Accessories" />
+          </div>
+        </a>
+      </div>
+
+      <div class="feature-item">
+        <a href="#">
+          <div class="feature-content">
+            <h4>Mods</h4>
+          </div>
+          <div class="feature-image">
+            <img src="https://static.gopro.com/assets/blta2b8522e5372af40/blt11bea0e5ce2da241/66ced08257f5f15a240e5b99/04-mods-1280-v2.png" alt="GoPro Mods" />
+          </div>
+        </a>
+      </div>
+
+      <div class="feature-item">
+        <a href="#">
+          <div class="feature-content">
+            <h4>Mounts</h4>
+          </div>
+          <div class="feature-image">
+            <img src="https://static.gopro.com/assets/blta2b8522e5372af40/blt0518dbb491ec51de/66ced0f6b8f6df57447c671f/05-mounts-1280-v2.jpg" alt="GoPro Mounts" />
+          </div>
+        </a>
+      </div>
+
+      <div class="feature-item">
+        <a href="#">
+          <div class="feature-content">
+            <h4>Protection</h4>
+          </div>
+          <div class="feature-image">
+            <img src="https://static.gopro.com/assets/blta2b8522e5372af40/blt93d91570a0e372da/66cec47b81847f4ea4ff54cb/06-protection-1280-v2.png" alt="GoPro Protection" />
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .product-feature {
+    padding: 60px 0;
+    background-color: #f8f8f8;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+  }
+
+  .feature-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+  }
+
+  .feature-main {
+    grid-column: span 2;
+  }
+
+  .feature-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 30px;
+    z-index: 2;
+  }
+
+  .feature-image {
+    width: 100%;
+  }
+
+  .feature-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  h3 {
+    font-size: 28px;
+    color: white;
+    margin-bottom: 10px;
+    font-family: 'SohneHalbfett', sans-serif;
+  }
+
+  h4 {
+    font-size: 22px;
+    color: white;
+    margin-bottom: 10px;
+    font-family: 'SohneHalbfett', sans-serif;
+  }
+
+  @media (max-width: 768px) {
+    .feature-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .feature-main {
+      grid-column: span 1;
+    }
+
+    h3 {
+      font-size: 24px;
+    }
+
+    h4 {
+      font-size: 20px;
+    }
+  }
+</style>
